@@ -1,0 +1,81 @@
+PODS:
+  - Backpack (1.2.0):
+    - Backpack/Badge (= 1.2.0)
+    - Backpack/Button (= 1.2.0)
+    - Backpack/Card (= 1.2.0)
+    - Backpack/Color (= 1.2.0)
+    - Backpack/Dialog (= 1.2.0)
+    - Backpack/Font (= 1.2.0)
+    - Backpack/Gradient (= 1.2.0)
+    - Backpack/Icon (= 1.2.0)
+    - Backpack/Label (= 1.2.0)
+    - Backpack/Panel (= 1.2.0)
+    - Backpack/Radii (= 1.2.0)
+    - Backpack/RTLSupport (= 1.2.0)
+    - Backpack/Shadow (= 1.2.0)
+    - Backpack/Spacing (= 1.2.0)
+    - Backpack/Spinner (= 1.2.0)
+    - Backpack/TextView (= 1.2.0)
+  - Backpack/Badge (1.2.0):
+    - Backpack/Color
+    - Backpack/Label
+    - Backpack/Radii
+    - Backpack/Spacing
+  - Backpack/Button (1.2.0):
+    - Backpack/Color
+    - Backpack/Font
+    - Backpack/Gradient
+    - Backpack/Label
+    - Backpack/RTLSupport
+    - Backpack/Spacing
+  - Backpack/Card (1.2.0):
+    - Backpack/Color
+    - Backpack/Radii
+    - Backpack/Shadow
+    - Backpack/Spacing
+  - Backpack/Color (1.2.0)
+  - Backpack/Dialog (1.2.0):
+    - Backpack/Button
+    - Backpack/Color
+    - Backpack/Label
+    - Backpack/Radii
+    - Backpack/Shadow
+    - Backpack/Spacing
+  - Backpack/Font (1.2.0)
+  - Backpack/Gradient (1.2.0):
+    - Backpack/Color
+  - Backpack/Icon (1.2.0)
+  - Backpack/Label (1.2.0):
+    - Backpack/Color
+    - Backpack/Font
+  - Backpack/Panel (1.2.0):
+    - Backpack/Color
+    - Backpack/Radii
+    - Backpack/Spacing
+  - Backpack/Radii (1.2.0)
+  - Backpack/RTLSupport (1.2.0)
+  - Backpack/Shadow (1.2.0)
+  - Backpack/Spacing (1.2.0)
+  - Backpack/Spinner (1.2.0):
+    - Backpack/Color
+  - Backpack/TextView (1.2.0):
+    - Backpack/Color
+    - Backpack/Font
+  - "UITextView+Placeholder (1.2.1)"
+
+DEPENDENCIES:
+  - Backpack
+  - "UITextView+Placeholder"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Backpack
+    - "UITextView+Placeholder"
+
+SPEC CHECKSUMS:
+  Backpack: 852240b937178a8c0fee4318f7f9baacb1ae946d
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+
+PODFILE CHECKSUM: 7e0426c0142cecd412e3bc0d07bd4caf5ff590cb
+
+COCOAPODS: 1.5.3
