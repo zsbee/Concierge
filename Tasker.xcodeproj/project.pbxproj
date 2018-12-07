@@ -11,11 +11,13 @@
 		1B461CBD2183252400B883D7 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B461CBC2183252400B883D7 /* MapCell.swift */; };
 		1B461CC02183264000B883D7 /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B461CBF2183264000B883D7 /* MapCellViewModel.swift */; };
 		1B473B78218733340094EA3D /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B473B77218733340094EA3D /* TaskViewModel.swift */; };
+		1B5D7FD72192E78F00A711B8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D7FD62192E78F00A711B8 /* DataController.swift */; };
 		1B6C9BF62189E4E400205EB9 /* HeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C9BF52189E4E400205EB9 /* HeaderModel.swift */; };
 		1B6C9BF82189E70F00205EB9 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C9BF72189E70F00205EB9 /* CellModel.swift */; };
 		1B6C9BFA218A014300205EB9 /* TaskDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C9BF9218A014300205EB9 /* TaskDescriptionViewModel.swift */; };
 		1B6C9BFC218A053F00205EB9 /* DescriptionInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C9BFB218A053F00205EB9 /* DescriptionInputCell.swift */; };
 		1B8765672177695B00634BB6 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8765662177695B00634BB6 /* NewTaskViewController.swift */; };
+		1B9255B121BA6E2A00E4B260 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9255B021BA6E2A00E4B260 /* BaseCell.swift */; };
 		1BB6F334215E703B0080F438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6F333215E703B0080F438 /* AppDelegate.swift */; };
 		1BB6F336215E703B0080F438 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6F335215E703B0080F438 /* FirstViewController.swift */; };
 		1BB6F338215E703B0080F438 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6F337215E703B0080F438 /* SecondViewController.swift */; };
@@ -54,11 +56,13 @@
 		1B461CBC2183252400B883D7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		1B461CBF2183264000B883D7 /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
 		1B473B77218733340094EA3D /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		1B5D7FD62192E78F00A711B8 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1B6C9BF52189E4E400205EB9 /* HeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderModel.swift; sourceTree = "<group>"; };
 		1B6C9BF72189E70F00205EB9 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		1B6C9BF9218A014300205EB9 /* TaskDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDescriptionViewModel.swift; sourceTree = "<group>"; };
 		1B6C9BFB218A053F00205EB9 /* DescriptionInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInputCell.swift; sourceTree = "<group>"; };
 		1B8765662177695B00634BB6 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		1B9255B021BA6E2A00E4B260 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		1BB6F330215E703B0080F438 /* Tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB6F333215E703B0080F438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB6F335215E703B0080F438 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				1B13AB79218233100014680F /* NewTaskHeaderCell.swift */,
 				1B461CBC2183252400B883D7 /* MapCell.swift */,
 				1B6C9BFB218A053F00205EB9 /* DescriptionInputCell.swift */,
+				1B9255B021BA6E2A00E4B260 /* BaseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 		1B6C9BFD218A14EA00205EB9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1B5D7FD62192E78F00A711B8 /* DataController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -389,14 +395,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tasker/Pods-Tasker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Backpack/Backpack.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Backpack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -450,6 +464,7 @@
 				1B6C9BFA218A014300205EB9 /* TaskDescriptionViewModel.swift in Sources */,
 				1B6C9BF62189E4E400205EB9 /* HeaderModel.swift in Sources */,
 				1BB6F338215E703B0080F438 /* SecondViewController.swift in Sources */,
+				1B9255B121BA6E2A00E4B260 /* BaseCell.swift in Sources */,
 				1B6C9BF82189E70F00205EB9 /* CellModel.swift in Sources */,
 				1B6C9BFC218A053F00205EB9 /* DescriptionInputCell.swift in Sources */,
 				1B461CBD2183252400B883D7 /* MapCell.swift in Sources */,
@@ -457,6 +472,7 @@
 				1B461CC02183264000B883D7 /* MapCellViewModel.swift in Sources */,
 				1B473B78218733340094EA3D /* TaskViewModel.swift in Sources */,
 				1B8765672177695B00634BB6 /* NewTaskViewController.swift in Sources */,
+				1B5D7FD72192E78F00A711B8 /* DataController.swift in Sources */,
 				1BB6F336215E703B0080F438 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@ import UIKit
 import Backpack
 import UITextView_Placeholder
 
-class DescriptionInputCell: UICollectionViewCell {
+class DescriptionInputCell: BaseCell {
     
     let textView = UITextView()
     
@@ -18,7 +18,6 @@ class DescriptionInputCell: UICollectionViewCell {
         super.init(frame: frame)
         self.setupViews()
         self.addViews()
-        self.createConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,6 +36,8 @@ class DescriptionInputCell: UICollectionViewCell {
         textView.placeholderColor = UIColor.lightGray
         
         textView.text = model.title
+        
+        self.createConstraints()
     }
     
     func createConstraints() {
@@ -45,6 +46,7 @@ class DescriptionInputCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             textView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            textView.heightAnchor.constraint(equalToConstant: 150),
             textView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: BPKSpacingBase),
             textView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -BPKSpacingBase),
         ])

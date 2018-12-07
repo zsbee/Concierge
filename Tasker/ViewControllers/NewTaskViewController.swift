@@ -12,7 +12,7 @@ import MapKit
 
 class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    let closeButton = Button(size: .large, style: .link)
+    let closeButton = UIButton(type: .system)
     var collectionView: UICollectionView!
     var taskModel: TaskViewModel!
     
@@ -28,7 +28,7 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
 
     func createViews() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false;
-        closeButton.setImage(Icon.makeIcon(name: .nativeiOSClose, color: .black, size: .large))
+        closeButton.setImage(Icon.makeIcon(name: .close, color: .black, size: .large), for: .normal)
         closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
         closeButton.backgroundColor = UIColor.white;
         closeButton.layer.cornerRadius = 16;
@@ -37,11 +37,11 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = BPKSpacingSm
         layout.minimumLineSpacing = BPKSpacingSm
+        layout.estimatedItemSize = CGSize(width: self.view.frame.width, height: 100)
         collectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
-        //collectionView.isPrefetchingEnabled = false
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = true
         collectionView.register(NewTaskHeaderCell.self, forCellWithReuseIdentifier: "header")
@@ -68,36 +68,23 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
 
         if (model.id == HeaderModel.identifier) {
             let headerCell: NewTaskHeaderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! NewTaskHeaderCell
+            headerCell.width = collectionView.frame.width
             headerCell.setModel(model: model as! HeaderModel)
             headerCell.delegate = self
             return headerCell
         } else if (model.id == MapCellViewModel.identifier) {
             let cell: MapCell = collectionView.dequeueReusableCell(withReuseIdentifier: "mapCell", for: indexPath) as! MapCell
+            cell.width = collectionView.frame.width
             cell.setModel(model: model as! MapCellViewModel)
             return cell
         } else if (model.id == TaskDescriptionViewModel.identifier) {
             let cell: DescriptionInputCell = collectionView.dequeueReusableCell(withReuseIdentifier: "description", for: indexPath) as! DescriptionInputCell
             cell.setModel(model: model as! TaskDescriptionViewModel)
+            cell.width = collectionView.frame.width
             return cell
         }
         
         return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let model:CellModel = taskModel.models[indexPath.row]
-        var h:CGFloat = 0
-        let w:CGFloat = self.view.frame.width
-
-        if (model.id == HeaderModel.identifier) {
-            h = 75
-        } else if (model.id == MapCellViewModel.identifier) {
-            h = 350
-        } else if (model.id == TaskDescriptionViewModel.identifier)  {
-            h = 300
-        }
-        
-        return CGSize(width: w, height: h)
     }
     
     @objc func closeTapped(sender: UIButton!) {
@@ -145,13 +132,13 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
         taskModel = TaskViewModel(pageTitle: "undefined", models: [
             HeaderModel(title: "Feladat leírás"),
             TaskDescriptionViewModel(placeHolder: "Kérlek írd le a lehető legpontosabban hogy mi lesz a feladat...", title: ""),
+            HeaderModel(title: "Fizetés"),
+            MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773)),
             HeaderModel(title: "Honnan"),
             MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773)),
             HeaderModel(title: "Hova"),
             MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773)),
             HeaderModel(title: "Határidő"),
-            MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773)),
-            HeaderModel(title: "Fizetés"),
             MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773))
             ]);
         collectionView.reloadData()

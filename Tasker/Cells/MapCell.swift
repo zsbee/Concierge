@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Backpack
 
-class MapCell: UICollectionViewCell, MKMapViewDelegate {
+class MapCell: BaseCell, MKMapViewDelegate {
     
     let mapView = MKMapView()
     let label = Label(fontStyle: .textBase)
@@ -25,7 +25,6 @@ class MapCell: UICollectionViewCell, MKMapViewDelegate {
         
         self.createViews()
         self.addViews()
-        self.createConstraints()
     }
     
     
@@ -38,7 +37,9 @@ class MapCell: UICollectionViewCell, MKMapViewDelegate {
         
         refreshButton.setImage(Icon.makeIcon(name: .refresh, color: .black, size: .small))
         refreshButton.addTarget(self, action: #selector(refreshTapped), for: .touchUpInside)
-        
+        refreshButton.setContentCompressionResistancePriority(.required, for: .horizontal)
+        refreshButton.setContentHuggingPriority(.required, for: .horizontal)
+
         pin = UIImageView(image: Icon.makeIcon(name: .cityCenter, color: Color.red500, size: .large))
         
         mapView.delegate = self
@@ -69,7 +70,7 @@ class MapCell: UICollectionViewCell, MKMapViewDelegate {
             self.label.text = addressString
         }
         
-        self.setNeedsLayout()
+        self.createConstraints()
     }
     
 
@@ -82,17 +83,19 @@ class MapCell: UICollectionViewCell, MKMapViewDelegate {
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: BPKSpacingBase),
+            mapView.heightAnchor.constraint(equalToConstant: 150),
             mapView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -BPKSpacingBase),
-            mapView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -50),
             
             pin.centerXAnchor.constraint(equalTo: mapView.centerXAnchor),
             pin.centerYAnchor.constraint(equalTo: mapView.centerYAnchor, constant: -10),
 
             label.centerYAnchor.constraint(equalTo: refreshButton.centerYAnchor, constant: 0),
             label.leadingAnchor.constraint(equalTo: refreshButton.trailingAnchor, constant: BPKSpacingSm),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -BPKSpacingBase),
             
             refreshButton.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: BPKSpacingSm),
             refreshButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: BPKSpacingBase),
+            refreshButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -BPKSpacingMd),
             ])
     }
     

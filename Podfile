@@ -8,6 +8,9 @@ target 'Tasker' do
   # Pods for Tasker
   pod 'Backpack'
   pod 'UITextView+Placeholder'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
   
   target 'TaskerTests' do
     inherit! :search_paths
