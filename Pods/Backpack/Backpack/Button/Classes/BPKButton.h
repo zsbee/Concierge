@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, BPKButtonStyle) {
     BPKButtonStyleDestructive = 2,
     BPKButtonStyleFeatured = 3,
     BPKButtonStyleLink = 4,
+    BPKButtonStyleOutline = 5,
 };
 
 /**
@@ -64,7 +65,7 @@ NS_SWIFT_NAME(Button) IB_DESIGNABLE @interface BPKButton: UIButton
 - (void)setTitle:(NSString *_Nullable)title forState:(UIControlState)state __attribute__((unavailable("use setTitle: instead")));
 - (void)setImage:(UIImage *_Nullable)image forState:(UIControlState)state __attribute__((unavailable("use setImage: instead")));
 
-- (void)setTitle:(NSString *_Nullable)title;
+@property(nonatomic, copy, nullable) NSString *title;
 - (void)setImage:(UIImage *_Nullable)image;
 /**
  * Creates a `BPKButton` with a specific size and style.
@@ -78,7 +79,7 @@ NS_SWIFT_NAME(Button) IB_DESIGNABLE @interface BPKButton: UIButton
 - (instancetype)initWithSize:(BPKButtonSize)size style:(BPKButtonStyle)style NS_DESIGNATED_INITIALIZER;
 
 /**
- * Creates a `BPKButton` with a decoder (typically when creating form Storyboards)
+ * Creates a `BPKButton` with a decoder (typically when creating from Storyboards)
  *
  * @param aDecoder Decoder object to extract parameters from
  * @return `BPKButton` instance.

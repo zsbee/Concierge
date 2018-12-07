@@ -43,7 +43,7 @@ class MapCell: BaseCell, MKMapViewDelegate {
         pin = UIImageView(image: Icon.makeIcon(name: .cityCenter, color: Color.red500, size: .large))
         
         mapView.delegate = self
-        mapView.layer.cornerRadius = 20
+        mapView.layer.cornerRadius = 24
     }
     
     @objc func refreshTapped(sender: UIButton!) {

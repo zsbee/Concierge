@@ -63,7 +63,17 @@ NS_SWIFT_NAME(DividedCard) IB_DESIGNABLE @interface BPKDividedCard: BPKCard
  * @param secondarySubview The secondary subview for the divided card.
  * @param padded Whether the card should have padding or not.
  */
-- (instancetype)initWithPrimarySubview:(UIView *_Nullable)primarySubview secondarySubview:(UIView *_Nullable)secondarySubview padded:(BOOL)padded NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPrimarySubview:(UIView *_Nullable)primarySubview secondarySubview:(UIView *_Nullable)secondarySubview padded:(BOOL)padded;
+
+/**
+ * Create a `BPKDividedCard` with two subviews.
+ *
+ * @param primarySubview The primary subview for the divided card.
+ * @param secondarySubview The secondary subview for the divided card.
+ * @param padded Whether the card should have padding or not.
+ * @param cornerStyle The style of the corners that should be applied to the card.
+ */
+- (instancetype)initWithPrimarySubview:(UIView *_Nullable)primarySubview secondarySubview:(UIView *_Nullable)secondarySubview padded:(BOOL)padded cornerStyle:(BPKCardCornerStyle)cornerStyle NS_DESIGNATED_INITIALIZER;
 
 /**
  * Create a `BPKDividedCard` with a given frame.
@@ -74,7 +84,7 @@ NS_SWIFT_NAME(DividedCard) IB_DESIGNABLE @interface BPKDividedCard: BPKCard
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
 /**
- * Creates a `BPKDividedCard` with a decoder (typically when creating form Storyboards)
+ * Creates a `BPKDividedCard` with a decoder (typically when creating from Storyboards)
  *
  * @param aDecoder Decoder object to extract parameters from
  * @return `BPKDividedCard` instance.

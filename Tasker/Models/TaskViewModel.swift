@@ -9,9 +9,11 @@
 import Foundation
 import MapKit
 
-public class TaskViewModel {
+public class TaskViewModel: CellModel {
     public let models: [CellModel]
     public let pageTitle: String
+    public static var identifier: String = "TASK_CARD_CELL"
+    public var id = TaskViewModel.identifier
     
     public init(pageTitle: String, models: [CellModel]) {
         self.pageTitle = pageTitle

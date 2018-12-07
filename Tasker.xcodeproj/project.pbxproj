@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B13AB7A218233110014680F /* NewTaskHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13AB79218233100014680F /* NewTaskHeaderCell.swift */; };
+		1B1B744821BAD4DD00C3114E /* TaskCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B744721BAD4DD00C3114E /* TaskCardCell.swift */; };
 		1B461CBD2183252400B883D7 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B461CBC2183252400B883D7 /* MapCell.swift */; };
 		1B461CC02183264000B883D7 /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B461CBF2183264000B883D7 /* MapCellViewModel.swift */; };
 		1B473B78218733340094EA3D /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B473B77218733340094EA3D /* TaskViewModel.swift */; };
@@ -53,6 +54,7 @@
 		117CB7CF6B88B5CC682EC72A /* Pods-Tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tasker/Pods-Tasker.debug.xcconfig"; sourceTree = "<group>"; };
 		125032AEC7A775649A84C090 /* Pods-TaskerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaskerTests/Pods-TaskerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1B13AB79218233100014680F /* NewTaskHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskHeaderCell.swift; sourceTree = "<group>"; };
+		1B1B744721BAD4DD00C3114E /* TaskCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardCell.swift; sourceTree = "<group>"; };
 		1B461CBC2183252400B883D7 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		1B461CBF2183264000B883D7 /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
 		1B473B77218733340094EA3D /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				1B461CBC2183252400B883D7 /* MapCell.swift */,
 				1B6C9BFB218A053F00205EB9 /* DescriptionInputCell.swift */,
 				1B9255B021BA6E2A00E4B260 /* BaseCell.swift */,
+				1B1B744721BAD4DD00C3114E /* TaskCardCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tasker/Pods-Tasker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Backpack/Backpack.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
@@ -406,6 +410,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Backpack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
@@ -469,6 +474,7 @@
 				1B6C9BFC218A053F00205EB9 /* DescriptionInputCell.swift in Sources */,
 				1B461CBD2183252400B883D7 /* MapCell.swift in Sources */,
 				1BB6F334215E703B0080F438 /* AppDelegate.swift in Sources */,
+				1B1B744821BAD4DD00C3114E /* TaskCardCell.swift in Sources */,
 				1B461CC02183264000B883D7 /* MapCellViewModel.swift in Sources */,
 				1B473B78218733340094EA3D /* TaskViewModel.swift in Sources */,
 				1B8765672177695B00634BB6 /* NewTaskViewController.swift in Sources */,

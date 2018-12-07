@@ -66,10 +66,10 @@ NS_SWIFT_NAME(Spinner) IB_DESIGNABLE @interface BPKSpinner : UIActivityIndicator
 - (instancetype)initWithStyle:(BPKSpinnerStyle)style size:(BPKSpinnerSize)size NS_DESIGNATED_INITIALIZER;
 
 /**
- * Creates a `BPKSpinner` with a decoder (typically when creating form Storyboards)
+ * Creates a `BPKSpinner` with a decoder (typically when creating from Storyboards)
  *
  * @param coder Decoder object to extract parameters from
- * @return `BPKButton` instance.
+ * @return `BPKSpinner` instance.
  */
 - (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 

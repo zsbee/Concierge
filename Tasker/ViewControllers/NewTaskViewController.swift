@@ -13,6 +13,7 @@ import MapKit
 class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     let closeButton = UIButton(type: .system)
+    let titleLabel = Label(fontStyle: BPKFontStyle.textXxlHeavy)
     var collectionView: UICollectionView!
     var taskModel: TaskViewModel!
     
@@ -23,15 +24,22 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
         self.createViews()
         self.addViews()
         
-        self.createDummyModel()
+        taskModel = NewTaskViewController.createDummyModel()
+        collectionView.reloadData()
     }
 
     func createViews() {
-        closeButton.translatesAutoresizingMaskIntoConstraints = false;
-        closeButton.setImage(Icon.makeIcon(name: .close, color: .black, size: .large), for: .normal)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        let image = Icon.makeIcon(name: .close, color: .black, size: .large)
+        closeButton.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
+        closeButton.tintColor = Color.blue500
         closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
         closeButton.backgroundColor = UIColor.white;
         closeButton.layer.cornerRadius = 16;
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false;
+        titleLabel.text = "Új feladat"
+        titleLabel.textColor = Color.blue500
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -47,12 +55,12 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
         collectionView.register(NewTaskHeaderCell.self, forCellWithReuseIdentifier: "header")
         collectionView.register(MapCell.self, forCellWithReuseIdentifier: "mapCell")
         collectionView.register(DescriptionInputCell.self, forCellWithReuseIdentifier: "description")
-
     }
     
     func addViews() {
         self.view.addSubview(collectionView)
         self.view.addSubview(closeButton)
+        self.view.addSubview(titleLabel)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -115,6 +123,9 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
         let bottomMargin =  self.view.safeAreaInsets.bottom;
 
         NSLayoutConstraint.activate([
+                titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: BPKSpacingBase),
+                titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: topMargin + BPKSpacingMd),
+            
                 closeButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -BPKSpacingBase),
                 closeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: topMargin + BPKSpacingMd),
                 closeButton.widthAnchor.constraint(equalToConstant: 32),
@@ -122,14 +133,14 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
             
                 collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
                 collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
-                collectionView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: BPKSpacingMd),
+                collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: BPKSpacingMd),
                 collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -bottomMargin)
             ]);
     }
  
     
-    func createDummyModel() {
-        taskModel = TaskViewModel(pageTitle: "undefined", models: [
+    public static func createDummyModel() -> TaskViewModel {
+        let taskModel = TaskViewModel(pageTitle: "undefined", models: [
             HeaderModel(title: "Feladat leírás"),
             TaskDescriptionViewModel(placeHolder: "Kérlek írd le a lehető legpontosabban hogy mi lesz a feladat...", title: ""),
             HeaderModel(title: "Fizetés"),
@@ -141,7 +152,7 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
             HeaderModel(title: "Határidő"),
             MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773))
             ]);
-        collectionView.reloadData()
+        return taskModel
     }
     
     func header_deleteTappedWithModel(model: HeaderModel) {

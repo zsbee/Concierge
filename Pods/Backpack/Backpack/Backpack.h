@@ -27,12 +27,16 @@
     #import "Gradient.h"
 
     #import "Badge.h"
+    #import "Calendar.h"
     #import "Card.h"
+    #import "Chip.h"
+    #import "Dialog.h"
     #import "Label.h"
     #import "Panel.h"
     #import "Icon.h"
     #import "Button.h"
     #import "Spinner.h"
+    #import "Switch.h"
     #import "TextView.h"
 #endif
 

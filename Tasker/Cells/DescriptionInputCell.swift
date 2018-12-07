@@ -12,7 +12,7 @@ import UITextView_Placeholder
 
 class DescriptionInputCell: BaseCell {
     
-    let textView = UITextView()
+    let textView = TextView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,10 +25,8 @@ class DescriptionInputCell: BaseCell {
     }
     
     func setupViews() {
-        textView.font = Font.makeFont(style: .textBase)
-        textView.layer.cornerRadius = 4
-        textView.backgroundColor = UIColor.init(displayP3Red: 0.965, green: 0.965, blue: 0.965, alpha: 1)
-        textView.placeholderLabel.font = Font.makeFont(style: .textBase)
+        textView.layer.cornerRadius = 12
+        textView.backgroundColor = Color.gray50
     }
     
     public func setModel(model: TaskDescriptionViewModel) {
