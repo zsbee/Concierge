@@ -30,6 +30,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = BPKSpacingBase
         layout.minimumLineSpacing = BPKSpacingBase
+        layout.sectionInset = UIEdgeInsets(top: BPKSpacingMd, left: 0, bottom: 3*BPKSpacingXxl, right: 0)
         layout.estimatedItemSize = CGSize(width: self.view.frame.width, height: 100)
         collectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,11 +40,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         collectionView.alwaysBounceVertical = true
         collectionView.register(TaskCardCell.self, forCellWithReuseIdentifier: "taskCard")
         collectionView.translatesAutoresizingMaskIntoConstraints = false;
-        
-        self.view.addSubview(addButton)
+
         self.view.addSubview(titleLabel)
         self.view.addSubview(collectionView)
-        
+        self.view.addSubview(addButton)
+
         collectionView.reloadData()
     }
 
@@ -78,8 +79,8 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: BPKSpacingMd),
             collectionView.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: 0),
             
-            addButton.widthAnchor.constraint(equalToConstant: 80),
-            addButton.heightAnchor.constraint(equalToConstant: 80),
+            addButton.widthAnchor.constraint(equalToConstant: 65),
+            addButton.heightAnchor.constraint(equalToConstant: 65),
             addButton.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: -BPKSpacingLg),
             addButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -BPKSpacingLg)
             ])

@@ -34,7 +34,7 @@ class TaskCardCell: BaseCell {
         NSLayoutConstraint.activate([
             card.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             card.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            card.heightAnchor.constraint(equalToConstant: 150),
+            card.heightAnchor.constraint(equalToConstant: 300),
             card.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: BPKSpacingBase),
             card.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -BPKSpacingBase),
             ])
