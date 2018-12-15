@@ -19,4 +19,17 @@ public class TaskViewModel: CellModel {
         self.pageTitle = pageTitle
         self.models = models
     }
+    
+    public func taskDescription() -> String {
+        var taskDesc = ""
+        for model in models {
+            if model.id == TaskDescriptionViewModel.identifier {
+                if let taskModel = model as? TaskDescriptionViewModel {
+                    taskDesc = taskModel.title
+                }
+            }
+        }
+        
+        return taskDesc
+    }
 }

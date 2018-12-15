@@ -1,84 +1,6 @@
 PODS:
-  - Backpack (4.2.0):
-    - Backpack/Badge (= 4.2.0)
-    - Backpack/Button (= 4.2.0)
-    - Backpack/Calendar (= 4.2.0)
-    - Backpack/Card (= 4.2.0)
-    - Backpack/Chip (= 4.2.0)
-    - Backpack/Color (= 4.2.0)
-    - Backpack/Dialog (= 4.2.0)
-    - Backpack/Font (= 4.2.0)
-    - Backpack/Gradient (= 4.2.0)
-    - Backpack/Icon (= 4.2.0)
-    - Backpack/Label (= 4.2.0)
-    - Backpack/Panel (= 4.2.0)
-    - Backpack/Radii (= 4.2.0)
-    - Backpack/RTLSupport (= 4.2.0)
-    - Backpack/Shadow (= 4.2.0)
-    - Backpack/Spacing (= 4.2.0)
-    - Backpack/Spinner (= 4.2.0)
-    - Backpack/Switch (= 4.2.0)
-    - Backpack/TextView (= 4.2.0)
-  - Backpack/Badge (4.2.0):
-    - Backpack/Color
-    - Backpack/Label
-    - Backpack/Radii
-    - Backpack/Spacing
-  - Backpack/Button (4.2.0):
-    - Backpack/Color
-    - Backpack/Font
-    - Backpack/Gradient
-    - Backpack/Label
-    - Backpack/RTLSupport
-    - Backpack/Spacing
-  - Backpack/Calendar (4.2.0):
-    - Backpack/Color
-    - Backpack/Font
-    - Backpack/Radii
-    - Backpack/Shadow
-    - Backpack/Spacing
+  - Backpack (5.0.0):
     - FSCalendar (~> 2.8)
-  - Backpack/Card (4.2.0):
-    - Backpack/Color
-    - Backpack/Radii
-    - Backpack/Shadow
-    - Backpack/Spacing
-  - Backpack/Chip (4.2.0):
-    - Backpack/Color
-    - Backpack/Label
-    - Backpack/Shadow
-    - Backpack/Spacing
-  - Backpack/Color (4.2.0)
-  - Backpack/Dialog (4.2.0):
-    - Backpack/Button
-    - Backpack/Color
-    - Backpack/Label
-    - Backpack/Radii
-    - Backpack/Shadow
-    - Backpack/Spacing
-  - Backpack/Font (4.2.0):
-    - Backpack/Color
-  - Backpack/Gradient (4.2.0):
-    - Backpack/Color
-  - Backpack/Icon (4.2.0)
-  - Backpack/Label (4.2.0):
-    - Backpack/Color
-    - Backpack/Font
-  - Backpack/Panel (4.2.0):
-    - Backpack/Color
-    - Backpack/Radii
-    - Backpack/Spacing
-  - Backpack/Radii (4.2.0)
-  - Backpack/RTLSupport (4.2.0)
-  - Backpack/Shadow (4.2.0)
-  - Backpack/Spacing (4.2.0)
-  - Backpack/Spinner (4.2.0):
-    - Backpack/Color
-  - Backpack/Switch (4.2.0):
-    - Backpack/Color
-  - Backpack/TextView (4.2.0):
-    - Backpack/Color
-    - Backpack/Font
   - Firebase/Auth (5.14.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.1.0)
@@ -175,7 +97,7 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
-  Backpack: 5e937be272d044d4c3779fb12b11947a717099c7
+  Backpack: 1e5f8dff158575477adb3d7aef3f85e4d3b48161
   Firebase: 963d5685fae888a56d6d4d9cfce6b9c976958798
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 4a5cc5fc2d1721e509e24699b93ebc3d94b1e195

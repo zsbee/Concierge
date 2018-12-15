@@ -69,6 +69,12 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = self.tasks[indexPath.row]
+        
+        
+    }
+    
     override func viewSafeAreaInsetsDidChange() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: BPKSpacingBase),

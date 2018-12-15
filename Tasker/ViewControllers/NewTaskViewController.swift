@@ -142,7 +142,7 @@ class NewTaskViewController: UIViewController, NewTaskHeaderCellDelegate, UIColl
     public static func createDummyModel() -> TaskViewModel {
         let taskModel = TaskViewModel(pageTitle: "undefined", models: [
             HeaderModel(title: "Feladat leírás"),
-            TaskDescriptionViewModel(placeHolder: "Kérlek írd le a lehető legpontosabban hogy mi lesz a feladat...", title: ""),
+            TaskDescriptionViewModel(placeHolder: "Kérlek írd le a lehető legpontosabban hogy mi lesz a feladat...", title: "Berci setaltatasa 30 percig kinn a Kalvin Teren. Nagyon okos kutya. Országszerte havazik, a pénteken elindult hóesés kitart szombaton is. Az előrejelzések szerint a havazás estig kitart, a keleti határnál vegyes formájú csapadék (havas eső, fagyott eső) sem kizárt. Az északi, északkeleti szél megélénkül, főként az Alpokalján és az Észak-Alföldön meg is erősödik."),
             HeaderModel(title: "Fizetés"),
             MapCellViewModel(title: "Egyéb info:", summary: "trallala", coordinates: CLLocationCoordinate2D(latitude: 47.492973, longitude: 19.073773)),
             HeaderModel(title: "Honnan"),
